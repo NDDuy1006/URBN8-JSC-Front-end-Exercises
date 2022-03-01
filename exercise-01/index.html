@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Get sum of an array using recursion</h2>
+  <p>My understanding of the code: <br>If the length of the array is 0, the function would return 0 <br>Else, the sum of the array is the result of adding the first element to the remainder of the array until there's nothing left in the array which is 0 <br>5 + sum([9, 6, 8, 4, 6]) <br>5 + 9 + sum([6, 8, 4, 6]) <br>5 + 9 + 6 + sum([8, 4, 6]) <br>5 + 9 + 6 + 8 + sum([4, 6]) <br>5 + 9 + 6 + 8 + 4 + sum([6]) <br>5 + 9 + 6 + 8 + 4 + 6 + sum([])</p>
+  <script>
+    let arrayOfNumbers1 = [1, 2, 3];
+    let arrayOfNumbers2 = [5, 9, 6, 8, 4, 6];
+    const getSum = function (arr) {
+      return arr.length === 0 ? 0 : arr[0] + getSum(arr.slice(1)); 
+    }
+    console.log(`The sum of array 1 using recursion is ${getSum(arrayOfNumbers1)}`);
+    console.log(`The sum of array 2 using recursion is ${getSum(arrayOfNumbers2)}`);
+  </script>
+</body>
+</html>
